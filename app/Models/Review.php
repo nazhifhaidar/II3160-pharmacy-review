@@ -75,4 +75,21 @@ class Review extends Model
             new TokensDocument($this->tok->tokenize($text))
         );
     }
+
+    public function addComment($userName, $comment, $drugsId){
+        try {
+            $data = [
+                'user_name' => $userName,
+                'comment' => $comment,
+                'drugs_id' => $drugsId,
+            ];
+    
+            $this->db->table($this->table)->insert($data);
+    
+            return true;
+        } catch (\Exception $e) {
+            return false; 
+        }
+    }
+
 }
