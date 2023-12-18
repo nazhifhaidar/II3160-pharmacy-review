@@ -1,0 +1,67 @@
+@import url("variable.css");
+
+/* Components */
+.med-review-card {
+    align-items: center;
+    border: 0.7px solid var(--netrallighten);
+    border-radius: 8px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 20px;
+    padding: 16px;
+    position: relative;
+}
+
+.image-1 {
+    height: 108px;
+    width: 108px;
+}
+
+.info-container {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.brand-name {
+    width: 100%;
+    text-align: left;
+    align-self: stretch;
+    color: var(--netraldarken);
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    justify-content: start;
+}
+
+.generic-name {
+    width: 100%;
+    text-align: left;
+    align-self: stretch;
+    color: var(--primarymain);
+    font-weight: 600;
+    line-height: normal;
+    position: relative;
+    justify-content: start;
+}
+
+.align-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primarydarken);
+}
+
+.button-wrapper {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+    justify-content: space-around;
+    width: 196px;
+}

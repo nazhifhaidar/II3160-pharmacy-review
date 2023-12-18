@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:500,400,600|Poppins:400');
-
 /* Variables */
 :root {
-    --black: rgba(0, 0, 0, 1);
     --primarydarken: rgba(22, 122, 87, 1);
-    --netraldarken: rgba(42, 29, 31, 1);
     --primarymain: rgba(86, 158, 137, 1);
-    --foundation-netralnetral-300: rgba(122, 122, 122, 1);
+    --netraldarken: rgba(42, 29, 31, 1);
     --netrallight: rgba(137, 137, 137. 1);
     --netrallighten: rgba(196, 196, 196, 1);
     --netralultralight: rgba(245, 245, 245, 1);
+
+    /* --foundation-netralnetral-300: rgba(122, 122, 122, 1); */
+    --black: rgba(0, 0, 0, 1);
     --white: rgba(255, 255, 255, 1);
 
     --font-size-m: 14px;
@@ -104,99 +103,15 @@
 }
 
 .button1 {
+    width: 100%;
+    border: 1px solid var(--primarydarken);
+    border-radius: 10px;
+    text-align: center;
     font-family: var(--font-family-inter);
     font-size: var(--font-size-m);
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
     letter-spacing: 1.25px;
-}
-
-/* Components */
-
-.med-review {
-    align-items: center;
-    border: 0.7px solid var(--netrallighten);
-    border-radius: 8px;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 20px;
-    padding: 16px;
-    position: relative;
-}
-
-.rating-and-review .image {
-    object-fit: cover;
-    position: relative;
-}
-
-.image-2 {
-    height: 108px;
-    width: 108px;
-}
-
-.frame-37 {
-    align-items: flex-start;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
-    
-}
-
-.brand-name {
-    align-self: stretch;
-    color: var(--netral-darken);
-    font-weight: 400;
-    line-height: normal;
-    margin-top: -1px;
-    position: relative;
-}
-
-.valign-text-middle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.frame-42 {
-    align-items: center;
-    display: flex;
-    flex: 0 0 auto;
-    gap: 8px;
-    position: relative;
-    justify-content: space-around;
-    width: 196px;
-}
-
-.button {
-    align-items: center;
-    border: 1px solud var(--primarydarken);
-    border-radius: 10px;
-    display: flex;
-    flex: 1;
-    flex-grow: 1;
-    gap: 10px;
-    height: 40px;
-    justify-content: center;
     padding: 8px 24px;
-    position: relative;
-}
-
-.text {
-    color: var(--primarydarken);
-    flex: 1;
-    font-weight: 500;
-    line-height: normal;
-    text-align: center;
-    position: relative;
-}
-
-.generic-name {
-    align-self: stretch;
-    color: var(--primarymain);
-    font-weight: 600;
-    line-height: normal;
-    position: relative;
 }
