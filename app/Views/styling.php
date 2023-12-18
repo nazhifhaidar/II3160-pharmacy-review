@@ -74,7 +74,7 @@
             </div>
             <div class="card-container">
                 <article class="med-review-card" id="1">
-                    <img class="image-1" src="../assets/image-2.png" alt="Med Image" />
+                    <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
                     <div class="info-container">
                         <div class="brand-name body-regular-1">
                             Aldactone
@@ -88,7 +88,7 @@
                     </div>
                 </article>
                 <article class="med-review-card" id="2">
-                    <img class="image-1" src="../assets/image-2.png" alt="Med Image" />
+                    <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
                     <div class="info-container">
                         <div class="brand-name body-regular-1">
                             Aldactone
@@ -102,7 +102,7 @@
                     </div>
                 </article>
                 <article class="med-review-card" id="3">
-                    <img class="image-1" src="../assets/image-2.png" alt="Med Image" />
+                    <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
                     <div class="info-container">
                         <div class="brand-name body-regular-1">
                             Aldactone

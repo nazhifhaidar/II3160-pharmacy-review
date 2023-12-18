@@ -14,7 +14,8 @@ class ReviewController extends BaseController{
                 $prediction = $model->predictTextSentiment($data->comment);
                 array_push($recommendedArray, $prediction);
             }
-            return view('review_detail', ['data'=>$result, 'sentiments'=>$recommendedArray, 'id'=>$drugsId]);
+            $analysis = $model->analyzeReview($drugsId);
+            return view('review_detail', ['data'=>$result, 'sentiments'=>$recommendedArray, 'id'=>$drugsId, 'analysis'=>$analysis]);
 
         }catch (\Exception $e){
             // echo $e->getTraceAsString();

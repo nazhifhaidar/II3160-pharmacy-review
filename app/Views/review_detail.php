@@ -16,22 +16,31 @@
     }
 
     .screen {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 90%;
-    height: 100%;
-    padding-left: 60px;
-    padding-right: 60px;
-
-    .right-container {
         display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: flex-start;
-        padding: 16px;
-    }
-}
+        width: 90%;
+        height: 100%;
+        padding-left: 60px;
+        padding-right: 60px;
 
+        .right-container {
+            display: flex;
+            align-items: flex-start;
+            padding: 16px;
+        }
+    }
+
+    .sentiment-container {
+        padding: 8px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        border-radius: 8px;
+    }
 </style>
 
 <body>
@@ -39,15 +48,15 @@
         <div class="left-container">
             <div class="med-info-container">
                 <div class="headline">
-                    <img class="image-2" src="/assets/image-2.png" alt="Med Image" />
+                    <img class="image-2" src="/assets/Aldactone.png" alt="Med Image" />
                     <div class="text-1 text-3">
                         <div class="med-name align-paragraph-middle headline-semibold-4">
                             Aldactone Spironolactone
                         </div>
                         <div class="review">
-                            <div class="percent align-paragraph-middle headline-semibold-2">86%</div>
-                            <div class="review-item align-paragraph-middle body-regular-2">Recommended</div>
-                            <div class="review-item align-paragraph-middle boddy-regular-2">(13 of 15)</div>
+                            <div class="percent align-paragraph-middle headline-semibold-2" style="color: <?= ($analysis['percentage'] < 66) ? '#F43F35' : '#000'; ?>"><?=number_format($analysis['percentage'], 2)?>%</div>
+                            <div class="review-item align-paragraph-middle body-regular-2"><?= ($analysis['percentage'] < 66) ? 'Not Recommended' : 'Recommended' ?></div>
+                            <div class="review-item align-paragraph-middle boddy-regular-2">(<?=$analysis['number']?> of <?=$analysis['total']?>)</div>
                         </div>
                     </div>
                 </div>
@@ -79,12 +88,15 @@
                 </form>
             </div>
         </div>
-        <div class="right-container">
+        <div class="right-container" style="width: fit-content;">
             <?php foreach ($data as $index => $record) : ?>
-                <div class="comment-card">
-                    <h3><?= $record->user_name ?></h3>
+                <div class="comment-card" style="width: 100%;">
+                    <div class="row-1" style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; align-items: center;">
+                        <h3><?= $record->user_name ?></h3>
+                        <div class="sentiment-container" style="background-color: <?= ($sentiments[$index] === 'recommended') ? '#85CE30' : '#F43F35'; ?>"><?= $sentiments[$index] ?></div>
+                    </div>
                     <p><?= $record->comment ?></p>
-                    <p><?= $sentiments[$index] ?></p>
+
                 </div>
             <?php endforeach; ?>
         </div>

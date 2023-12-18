@@ -59,7 +59,7 @@ class Review extends Model
             }
 
             // Return the percentage of people who recommend it
-            return ($num_of_positive / count($reviewTexts)) * 100;
+            return ['percentage'=>($num_of_positive / count($reviewTexts)) * 100, 'number'=>$num_of_positive, 'total'=>count($reviewTexts)];
         } catch (\Exception $e) {
             return null;
         }
