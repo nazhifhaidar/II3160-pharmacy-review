@@ -20,16 +20,27 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        width: 90%;
-        height: 100%;
-        padding-left: 60px;
-        padding-right: 60px;
+        width: 100%;
+        height: fit-content;
+        /* padding-left: 60px;
+        padding-right: 60px; */
 
-        .right-container {
-            display: flex;
-            align-items: flex-start;
-            padding: 16px;
-        }
+    }
+
+    .left-container {
+        flex: 1;
+        
+    }
+
+    .right-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+        width: fit-content;
+        height: 100%;
+        overflow-y: auto;
+        max-height: 140vh;
     }
 
     .sentiment-container {
@@ -40,6 +51,12 @@
         align-items: center;
         height: fit-content;
         border-radius: 8px;
+    }
+
+    .no-reviews {
+        font-size: 18px;
+        color: #555;
+        margin-top: 10px;
     }
 </style>
 
@@ -54,9 +71,9 @@
                             Aldactone Spironolactone
                         </div>
                         <div class="review">
-                            <div class="percent align-paragraph-middle headline-semibold-2" style="color: <?= ($analysis['percentage'] < 66) ? '#F43F35' : '#000'; ?>"><?=number_format($analysis['percentage'], 2)?>%</div>
+                            <div class="percent align-paragraph-middle headline-semibold-2" style="color: <?= ($analysis['percentage'] < 66) ? '#F43F35' : 'var(--primarymain)'; ?>"><?= number_format($analysis['percentage'], 2) ?>%</div>
                             <div class="review-item align-paragraph-middle body-regular-2"><?= ($analysis['percentage'] < 66) ? 'Not Recommended' : 'Recommended' ?></div>
-                            <div class="review-item align-paragraph-middle boddy-regular-2">(<?=$analysis['number']?> of <?=$analysis['total']?>)</div>
+                            <div class="review-item align-paragraph-middle boddy-regular-2">(<?= $analysis['number'] ?> of <?= $analysis['total'] ?>)</div>
                         </div>
                     </div>
                 </div>
@@ -88,17 +105,20 @@
                 </form>
             </div>
         </div>
-        <div class="right-container" style="width: fit-content;">
-            <?php foreach ($data as $index => $record) : ?>
-                <div class="comment-card" style="width: 100%;">
-                    <div class="row-1" style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; align-items: center;">
-                        <h3><?= $record->user_name ?></h3>
-                        <div class="sentiment-container" style="background-color: <?= ($sentiments[$index] === 'recommended') ? '#85CE30' : '#F43F35'; ?>"><?= $sentiments[$index] ?></div>
+        <div class="right-container">
+        <?php if (empty($data)) : ?>
+                <div class="no-reviews">No reviews yet</div>
+            <?php else : ?>
+                <?php foreach ($data as $index => $record) : ?>
+                    <div class="comment-card" style="width: 100%;">
+                        <div class="row-1" style="width: 100%; display: flex; justify-content: space-between; flex-direction: row; align-items: center;">
+                            <h3><?= $record->user_name ?></h3>
+                            <div class="sentiment-container" style="background-color: <?= ($sentiments[$index] === 'recommended') ? '#85CE30' : '#F43F35'; ?>"><?= $sentiments[$index] ?></div>
+                        </div>
+                        <p><?= $record->comment ?></p>
                     </div>
-                    <p><?= $record->comment ?></p>
-
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 </body>

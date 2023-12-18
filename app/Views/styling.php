@@ -1,3 +1,20 @@
+<?php
+if (isset($_GET['search'])) {
+    // Get the search keyword
+    $searchKeyword = $_GET['search'];
+
+    // Filter the $data array based on the search keyword
+    $data = array_filter($data, function ($row) use ($searchKeyword) {
+        foreach ($row as $field) {
+            if (stripos($field, $searchKeyword) !== false) {
+                return true; // Match found
+            }
+        }
+        return false; // No match found
+    });
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +81,7 @@
 
 <body>
     <div class="screen" style="display: flex; justify-content: center;">
-        <div class="left-container" >
+        <div class="left-container">
             <div class="search-wrapper" id="search-bar">
                 <form>
                     <label for="search-input" style="margin-right: 5px;">Search:</label>
@@ -73,51 +90,25 @@
                 </form>
             </div>
             <div class="card-container">
-                <article class="med-review-card" id="1">
-                    <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
-                    <div class="info-container">
-                        <div class="brand-name body-regular-1">
-                            Aldactone
+                <?php foreach ($data as $record) : ?>
+                    <article class="med-review-card" id="<?= $record["id"] ?>">
+                        <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
+                        <div class="info-container">
+                            <div class="brand-name body-regular-1">
+                                <?= $record["brandName"] ?>
+                            </div>
+                            <div class="generic-name body-semibold-1">
+                                <?= $record["genericName"] ?>
+                            </div>
+                            <div class="button-wrapper">
+                                <a href="<?= base_url('review/' . $record["id"]) ?>" class="align-text-middle button-secondary">View Reviews</a>
+                            </div>
                         </div>
-                        <div class="generic-name body-semibold-1">
-                            Spironolactone
-                        </div>
-                        <div class="button-wrapper">
-                            <a href="<?= base_url('review/1') ?>" class="align-text-middle button-secondary">View Reviews</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="med-review-card" id="2">
-                    <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
-                    <div class="info-container">
-                        <div class="brand-name body-regular-1">
-                            Aldactone
-                        </div>
-                        <div class="generic-name body-semibold-1">
-                            Spironolactone
-                        </div>
-                        <div class="button-wrapper">
-                            <a href="<?= base_url('review/2') ?>" class="align-text-middle button-secondary">View Reviews</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="med-review-card" id="3">
-                    <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
-                    <div class="info-container">
-                        <div class="brand-name body-regular-1">
-                            Aldactone
-                        </div>
-                        <div class="generic-name body-semibold-1">
-                            Spironolactone
-                        </div>
-                        <div class="button-wrapper">
-                            <a href="<?= base_url('review/3') ?>" class="align-text-middle button-secondary">View Reviews</a>
-                        </div>
-                    </div>
-                </article>
+                    </article>
+                <?php endforeach; ?>
             </div>
         </div>
-        
+
     </div>
 </body>
 
