@@ -48,13 +48,13 @@
     justify-content: start;
 }
 
-.align-text-middle {
+/* .align-text-middle {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--primarydarken);
-}
+} */
 
 .button-wrapper {
     align-items: center;

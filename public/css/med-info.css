@@ -10,7 +10,6 @@
     gap: 20px;
     padding: 30px;
     position: relative;
-    width: 517px;
 }
 
 .med {
@@ -39,7 +38,7 @@
     text-align: justify;
     line-height: normal;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .headline {
