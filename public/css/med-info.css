@@ -1,0 +1,119 @@
+@import url("variable.css");
+
+/* Components */
+.med-info-container {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.med {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex:0 0 auto;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.lorem-ipsum-dolor-si {
+    align-self: stretch;
+    color: var(--netraldarken);
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    text-align: justify;
+}
+
+.tion {
+    align-items: flex-start;
+    color: var(--netraldarken);
+    text-align: justify;
+    line-height: normal;
+    position: relative;
+    /* width: 100%; */
+}
+
+.headline {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.text-1 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+}
+
+.rating-and-review .text-3 {
+    flex: 1;
+    position: relatlve;
+}
+
+.med-name {
+    align-self: stretch;
+    color: var(--netraldarken);
+    font-weight: 600;
+    line-height: normal;
+    margin-top: -1px;
+    position: relətive;
+    text-align: center;
+}
+
+.review {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.percent {
+    color: var(--primarydarken);
+    font-weight: 600;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+    width: fit-content;
+}
+
+.revlew-item {
+    color: var(--netraldarken);
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.rating-and-revlew .image {
+    object-fit: cover;
+    position: relative;
+}
+
+.image-2 {
+    height: 200px;
+    width: 200px;
+}
+
+.align-paragraph-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,103 @@
+@import url(variable.css);
+
+/* Components */
+.frame-49 {
+    align-items: flex-start;
+    align-self: stretch;
+    /* border-color: var(--netrallighten);
+    border-left-style: solid;
+    border-left-width: 0.7px;
+    border-top-style: solid;
+    border-top-width: 0.7px; */
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    padding: 24px 28px;
+    border-top: 1px solid var(--netrallighten);
+    position: relative;
+    /* width: 517px; */
+}
+
+.frame-62 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 12px;
+    position: relative;
+    /* width: 100%; */
+}
+
+.thumb_up {
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.thumb_down {
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.align-button-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.choose {
+    color: var(--netrallight);
+    font-weight: 600;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+}
+
+.write-title {
+    align-self: stretch;
+    color: var(--netraldarken);
+    font-weight: 600;
+    line-height: normal;
+    margin-top: -0.7px;
+    position: relative;
+}
+
+.frame-61 {
+    align-items: flex-start;
+    align-self: stretch;
+    background-color: var(--netralultralight);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    height: 260px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+
+.share {
+    align-self: stretch;
+    color: var(--netrallight);
+    font-weight: 490;
+    line-height: normal;
+    margin-top: -1px;
+    position: relative;
+}
+
+.rating-and-review .text-3 {
+    flex: 1;
+    position: relative;
+}
+
+.text-2 {
+    color: var(--white);
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+}
