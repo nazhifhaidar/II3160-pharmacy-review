@@ -92,13 +92,16 @@ if (isset($_GET['search'])) {
             <div class="card-container">
                 <?php foreach ($data as $record) : ?>
                     <article class="med-review-card" id="<?= $record["id"] ?>">
-                        <img class="image-1" src="../assets/Aldactone.png" alt="Med Image" />
+                        <img class="image-1" src="/assets/<?= $record['genericName'] ?>.png" alt="Med Image" />
                         <div class="info-container">
                             <div class="brand-name body-regular-1">
                                 <?= $record["brandName"] ?>
                             </div>
                             <div class="generic-name body-semibold-1">
                                 <?= $record["genericName"] ?>
+                            </div>
+                            <div class="days-depleted">
+                                Will be depleted in <?= $record['predicted_days_left'] ?> day(s)
                             </div>
                             <div class="button-wrapper">
                                 <a href="<?= base_url('review/' . $record["id"]) ?>" class="align-text-middle button-secondary">View Reviews</a>

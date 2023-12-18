@@ -48,6 +48,17 @@
     justify-content: start;
 }
 
+.days-depleted {
+    width: 100%;
+    text-align: left;
+    align-self: stretch;
+    color: #F43F35;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    justify-content: start;
+}
+
 /* .align-text-middle {
     display: flex;
     flex-direction: column;

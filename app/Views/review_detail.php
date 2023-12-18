@@ -41,6 +41,8 @@
         height: 100%;
         overflow-y: auto;
         max-height: 140vh;
+        max-width: 400px;
+        overflow-wrap: break-word;
     }
 
     .sentiment-container {
@@ -65,10 +67,10 @@
         <div class="left-container">
             <div class="med-info-container">
                 <div class="headline">
-                    <img class="image-2" src="/assets/Aldactone.png" alt="Med Image" />
+                    <img class="image-2" src="/assets/<?=$medicine['genericName']?>.png" alt="Med Image" />
                     <div class="text-1 text-3">
                         <div class="med-name align-paragraph-middle headline-semibold-4">
-                            Aldactone Spironolactone
+                            <?= $medicine["brandName"]?> / <?= $medicine["genericName"]?> 
                         </div>
                         <div class="review">
                             <div class="percent align-paragraph-middle headline-semibold-2" style="color: <?= ($analysis['percentage'] < 66) ? '#F43F35' : 'var(--primarymain)'; ?>"><?= number_format($analysis['percentage'], 2) ?>%</div>
