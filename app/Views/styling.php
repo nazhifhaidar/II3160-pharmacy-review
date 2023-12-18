@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,11 +27,11 @@
     }
 
     form {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
     }
 
     button {
@@ -62,8 +63,8 @@
 </style>
 
 <body>
-    <div class="screen">
-        <div class="left-container">
+    <div class="screen" style="display: flex; justify-content: center;">
+        <div class="left-container" >
             <div class="search-wrapper" id="search-bar">
                 <form>
                     <label for="search-input" style="margin-right: 5px;">Search:</label>
@@ -72,8 +73,8 @@
                 </form>
             </div>
             <div class="card-container">
-                <article class="med-review-card">
-                    <img class="image-1" src="../assets/image-2.png" alt="Med Image"/>
+                <article class="med-review-card" id="1">
+                    <img class="image-1" src="../assets/image-2.png" alt="Med Image" />
                     <div class="info-container">
                         <div class="brand-name body-regular-1">
                             Aldactone
@@ -82,14 +83,12 @@
                             Spironolactone
                         </div>
                         <div class="button-wrapper">
-                            <div class="align-text-middle button-secondary">
-                                    Add Review
-                            </div>
+                            <a href="<?= base_url('review/1') ?>" class="align-text-middle button-secondary">View Reviews</a>
                         </div>
                     </div>
                 </article>
-                <article class="med-review-card">
-                    <img class="image-1" src="../assets/image-2.png" alt="Med Image"/>
+                <article class="med-review-card" id="2">
+                    <img class="image-1" src="../assets/image-2.png" alt="Med Image" />
                     <div class="info-container">
                         <div class="brand-name body-regular-1">
                             Aldactone
@@ -98,14 +97,12 @@
                             Spironolactone
                         </div>
                         <div class="button-wrapper">
-                            <div class="align-text-middle button-secondary">
-                                    Add Review
-                            </div>
+                            <a href="<?= base_url('review/2') ?>" class="align-text-middle button-secondary">View Reviews</a>
                         </div>
                     </div>
                 </article>
-                <article class="med-review-card">
-                    <img class="image-1" src="../assets/image-2.png" alt="Med Image"/>
+                <article class="med-review-card" id="3">
+                    <img class="image-1" src="../assets/image-2.png" alt="Med Image" />
                     <div class="info-container">
                         <div class="brand-name body-regular-1">
                             Aldactone
@@ -114,57 +111,14 @@
                             Spironolactone
                         </div>
                         <div class="button-wrapper">
-                            <div class="align-text-middle button-secondary">
-                                    Add Review
-                            </div>
+                            <a href="<?= base_url('review/3') ?>" class="align-text-middle button-secondary">View Reviews</a>
                         </div>
                     </div>
                 </article>
             </div>
         </div>
-        <div class="right-container">
-            <div class="med-info-container">
-                <div class="headline">
-                    <img class="image-2" src="../assets/image-2.png" alt="Med Image"/>
-                    <div class="text-1 text-3">
-                        <div class="med-name align-paragraph-middle headline-semibold-4">
-                            Aldactone Spironolactone
-                        </div>
-                        <div class="review">
-                            <div class="percent align-paragraph-middle headline-semibold-2">86%</div>
-                            <div class="review-item align-paragraph-middle body-regular-2">Recommended</div>
-                            <div class="review-item align-paragraph-middle boddy-regular-2">(13 of 15)</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="med">
-                    <div class="tion align-text-left body-semibold-2">Brief Explanation</div>
-                    <p class="tion align-text-left body-regular-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet purus gravida quis blandit turpis cursus. Congue nisi vitae suscipit tellus mauris a diam.
-                    </p>
-                </div>
-                <div class="med">
-                    <div class="tion align-text-left body-semibold-2">Composition</div>
-                    <p class="tion align-text-left body-regular-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet purus gravida quis blandit turpis cursus. Congue nisi vitae suscipit tellus mauris a diam.
-                    </p>
-                </div>
-            </div>
-
-            <div class="frame-49">
-                <p class="write-title align-button-middle body-semibold-1">Write your Review for Aldactone Spironolactone</p>
-                <div class="frame-61">
-                    <p class="share body-regular-3">Share your experience while using this product</p>
-                </div>
-                <div class="frame-62">
-                    <div class="choose align-button-middle body-semibold-3">Are this product recommended?</div>
-                    <img class="thumb-up" src="../assets/thumb_up.svg" alt="thumb-up"/><img class="thumb-down" src="../assets/thumb_down.svg" alt="thumb-down"/>
-                </div>
-                <div class="align-text-middle button-primary">
-                    Post Your Review
-                </div>
-            </div>
-        </div>
+        
     </div>
 </body>
+
 </html>
