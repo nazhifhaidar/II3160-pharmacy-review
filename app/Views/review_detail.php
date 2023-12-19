@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?= $medicine["brandName"]?> / <?= $medicine["genericName"]?> </title>
+    <title> <?= $medicine["brandName"] ?> / <?= $medicine["genericName"] ?> </title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/card.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/med-info.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/cust-review.css'); ?>">
@@ -29,7 +29,7 @@
 
     .left-container {
         flex: 1;
-        
+
     }
 
     .right-container {
@@ -60,17 +60,30 @@
         color: #555;
         margin-top: 10px;
     }
+
+    button {
+        background-color: rgba(86, 158, 137, 1);
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        height: fit-content;
+    }
 </style>
 
 <body>
     <div class="screen">
+        <button class="back" onclick="window.location.href='/review'">
+            Back
+        </button>
         <div class="left-container">
             <div class="med-info-container">
                 <div class="headline">
-                    <img class="image-2" src="/assets/<?=$medicine['genericName']?>.png" alt="Med Image" />
+                    <img class="image-2" src="/assets/<?= $medicine['genericName'] ?>.png" alt="Med Image" />
                     <div class="text-1 text-3">
                         <div class="med-name align-paragraph-middle headline-semibold-4">
-                            <?= $medicine["brandName"]?> / <?= $medicine["genericName"]?> 
+                            <?= $medicine["brandName"] ?> / <?= $medicine["genericName"] ?>
                         </div>
                         <div class="review">
                             <div class="percent align-paragraph-middle headline-semibold-2" style="color: <?= ($analysis['percentage'] < 66) ? '#F43F35' : 'var(--primarymain)'; ?>"><?= number_format($analysis['percentage'], 2) ?>%</div>
@@ -94,9 +107,9 @@
             </div>
 
             <div class="frame-49">
-                <p class="write-title align-button-middle body-semibold-1">Write your Review for  <?= $medicine["brandName"]?> / <?= $medicine["genericName"]?> </p>
+                <p class="write-title align-button-middle body-semibold-1">Write your Review for <?= $medicine["brandName"] ?> / <?= $medicine["genericName"] ?> </p>
                 <form action="/review/addComment" method="POST">
-                    <input type="hidden" name="user_name" value="<?=$user ?>">
+                    <input type="hidden" name="user_name" value="<?= $user ?>">
                     <input type="hidden" name="drugs_id" value="<?= $id ?>">
                     <div class="frame-61">
                         <textarea type="text" class="share body-regular-3" name="comment" placeholder="Share your experience while using this product" id="comment"></textarea>
@@ -108,7 +121,7 @@
             </div>
         </div>
         <div class="right-container">
-        <?php if (empty($data)) : ?>
+            <?php if (empty($data)) : ?>
                 <div class="no-reviews">No reviews yet</div>
             <?php else : ?>
                 <?php foreach ($data as $index => $record) : ?>

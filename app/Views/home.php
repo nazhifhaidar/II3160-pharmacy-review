@@ -47,7 +47,7 @@
     }
 
     .main-content button:last-child {
-        background-color: #f44336;
+        background-color: rgba(86, 158, 137, 1);
         margin-top: 10px;
     }
 </style>

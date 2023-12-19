@@ -52,7 +52,7 @@ if (isset($_GET['search'])) {
     }
 
     button {
-        background-color: #ff5722;
+        background-color: rgba(86, 158, 137, 1);
         color: #fff;
         border: none;
         padding: 10px 15px;
@@ -90,7 +90,8 @@ if (isset($_GET['search'])) {
         justify-content: flex-start;
         width: fit-content;
     }
-    .card-container{
+
+    .card-container {
         display: grid;
         grid-template-columns: repeat(2, minmax(300px, 1fr));
         grid-gap: 20px;
@@ -108,17 +109,17 @@ if (isset($_GET['search'])) {
     <div class="center">
         <div class="screen">
             <div class="container">
-                <div class="row-1" style="display: flex; flex-direction: row; justify-content:space-evenly; width:100%">
+                <div class="row-1" style="display: flex; flex-direction: row; justify-content:space-between; width:100%; align-items:center;">
                     <div class="search-wrapper" id="search-bar">
                         <form>
                             <label for="search-input" style="margin-right: 5px;">Search:</label>
-                            <input type="text" id="search-input" name="search" placeholder="Enter keyword">
+                            <input type="text" style="margin-right: 5px;" id="search-input" name="search" placeholder="Enter keyword">
                             <button type="submit">Search</button>
                         </form>
                     </div>
-                    <div class="logout">
-                        <a href="/logout">Logout</a>
-                    </div>
+                    <button class="logout" style="height: fit-content;" onclick="window.location.href='/logout'">
+                        Logout
+                    </button>
                 </div>
 
                 <div class="card-container">
