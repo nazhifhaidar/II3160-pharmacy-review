@@ -26,4 +26,10 @@ class ReviewAPIController extends ResourceController
         echo $response->getBody();
         echo $response->header('Content-Type');
     }
+
+    public function summary(){
+        $model = new Review();
+        $summary = $model->summarize();
+        return $this->respond($summary, 200, "Got the Summary");
+    }
 }

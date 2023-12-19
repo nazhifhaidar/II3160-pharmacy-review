@@ -96,7 +96,7 @@
             <div class="frame-49">
                 <p class="write-title align-button-middle body-semibold-1">Write your Review for Aldactone Spironolactone</p>
                 <form action="/review/addComment" method="POST">
-                    <input type="hidden" name="user_name" value="User1">
+                    <input type="hidden" name="user_name" value="<?=$user ?>">
                     <input type="hidden" name="drugs_id" value="<?= $id ?>">
                     <div class="frame-61">
                         <textarea type="text" class="share body-regular-3" name="comment" placeholder="Share your experience while using this product" id="comment"></textarea>

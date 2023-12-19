@@ -9,6 +9,12 @@ class ReviewController extends BaseController
     public function showAllReviewOfCertainProduct($drugsId)
     {
         try {
+            if (session()->get('num_user') == '') {
+                return redirect()->to('/login');
+            }
+
+            $sessionUser = session()->get('username');
+    
             $model = model(Review::class);
             // $productInfo = 
             $result = $model->getReviewByProductId($drugsId);
@@ -23,7 +29,7 @@ class ReviewController extends BaseController
                 array_push($recommendedArray, $prediction);
             }
             $analysis = $model->analyzeReview($drugsId);
-            return view('review_detail', ['data' => $result, 'sentiments' => $recommendedArray, 'id' => $drugsId, 'analysis' => $analysis, 'medicine'=>$medicine]);
+            return view('review_detail', ['data' => $result, 'sentiments' => $recommendedArray, 'id' => $drugsId, 'analysis' => $analysis, 'medicine'=>$medicine, 'user'=>$sessionUser]);
         } catch (\Exception $e) {
             // echo $e->getTraceAsString();
             echo $e->getMessage();
@@ -32,6 +38,10 @@ class ReviewController extends BaseController
 
     public function addComment()
     {
+        if (session()->get('num_user') == '') {
+            return redirect()->to('/login');
+        }
+
         $request = $this->request;
         $userName = $request->getPost('user_name');
         $comment  = $request->getPost('comment');
