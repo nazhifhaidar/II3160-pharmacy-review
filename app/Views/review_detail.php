@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commercial System</title>
+    <title> <?= $medicine["brandName"]?> / <?= $medicine["genericName"]?> </title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/card.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/med-info.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/cust-review.css'); ?>">
@@ -94,7 +94,7 @@
             </div>
 
             <div class="frame-49">
-                <p class="write-title align-button-middle body-semibold-1">Write your Review for Aldactone Spironolactone</p>
+                <p class="write-title align-button-middle body-semibold-1">Write your Review for  <?= $medicine["brandName"]?> / <?= $medicine["genericName"]?> </p>
                 <form action="/review/addComment" method="POST">
                     <input type="hidden" name="user_name" value="<?=$user ?>">
                     <input type="hidden" name="drugs_id" value="<?= $id ?>">

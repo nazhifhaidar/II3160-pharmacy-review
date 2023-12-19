@@ -161,7 +161,7 @@
     display: flex;
     width: 739px;
     justify-content: space-between;
-    align-items: flex-start!important;
+    align-items: flex-start !important;
     align-content: flex-start;
     row-gap: 24px;
     flex-wrap: wrap;
@@ -176,4 +176,17 @@
     flex-shrink: 0;
     border-right: 1px solid var(--netrallighten);
     border-left: 1px solid var(--netrallighten);
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.logout a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 10px;
 }

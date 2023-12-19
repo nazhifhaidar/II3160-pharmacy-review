@@ -35,12 +35,12 @@ if (isset($_GET['search'])) {
     .screen {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-start;
-        width: 90%;
+        width: fit-content;
         height: 100%;
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     form {
@@ -77,42 +77,75 @@ if (isset($_GET['search'])) {
         justify-content: flex-end;
         align-items: center;
     }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: fit-content;
+    }
+    .card-container{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        grid-gap: 20px;
+        align-items: stretch;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .med-review-card:hover {
+        transform: scale(1.05);
+    }
 </style>
 
 <body>
-    <div class="screen" style="display: flex; justify-content: center;">
-        <div class="left-container">
-            <div class="search-wrapper" id="search-bar">
-                <form>
-                    <label for="search-input" style="margin-right: 5px;">Search:</label>
-                    <input type="text" id="search-input" name="search" placeholder="Enter keyword">
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-            <div class="card-container">
-                <?php foreach ($data as $record) : ?>
-                    <article class="med-review-card" id="<?= $record["id"] ?>">
-                        <img class="image-1" src="/assets/<?= $record['genericName'] ?>.png" alt="Med Image" />
-                        <div class="info-container">
-                            <div class="brand-name body-regular-1">
-                                <?= $record["brandName"] ?>
+    <div class="center">
+        <div class="screen">
+            <div class="container">
+                <div class="row-1" style="display: flex; flex-direction: row; justify-content:space-evenly; width:100%">
+                    <div class="search-wrapper" id="search-bar">
+                        <form>
+                            <label for="search-input" style="margin-right: 5px;">Search:</label>
+                            <input type="text" id="search-input" name="search" placeholder="Enter keyword">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="logout">
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <?php foreach ($data as $record) : ?>
+                        <article class="med-review-card" id="<?= $record["id"] ?>">
+                            <img class="image-1" src="/assets/<?= $record['genericName'] ?>.png" alt="Med Image" />
+                            <div class="info-container">
+                                <div class="brand-name body-regular-1">
+                                    <?= $record["brandName"] ?>
+                                </div>
+                                <div class="generic-name body-semibold-1">
+                                    <?= $record["genericName"] ?>
+                                </div>
+                                <div class="days-depleted">
+                                    Will be depleted in <?= $record['predicted_days_left'] ?> day(s)
+                                </div>
+                                <div class="button-wrapper">
+                                    <a href="<?= base_url('review/' . $record["id"]) ?>" class="align-text-middle button-secondary">View Reviews</a>
+                                </div>
                             </div>
-                            <div class="generic-name body-semibold-1">
-                                <?= $record["genericName"] ?>
-                            </div>
-                            <div class="days-depleted">
-                                Will be depleted in <?= $record['predicted_days_left'] ?> day(s)
-                            </div>
-                            <div class="button-wrapper">
-                                <a href="<?= base_url('review/' . $record["id"]) ?>" class="align-text-middle button-secondary">View Reviews</a>
-                            </div>
-                        </div>
-                    </article>
-                <?php endforeach; ?>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
-
     </div>
+
 </body>
 
 </html>
