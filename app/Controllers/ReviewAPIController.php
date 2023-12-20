@@ -22,7 +22,7 @@ class ReviewAPIController extends ResourceController
     public function test()
     {
         $client = \Config\Services::curlrequest();
-        $response = $client->request('GET', 'http://localhost:8080/api/data');
+        $response = $client->request('GET', getenv('SERVICE_URL').'/api/data');
         echo $response->getBody();
         echo $response->header('Content-Type');
     }

@@ -10,7 +10,7 @@ class Review extends BaseController
         }
 
         // echo session()->get('username');
-        $apiURL = 'http://localhost:8080/api/data_complete';
+        $apiURL = getenv('SERVICE_URL').'/api/data_complete';
         $client =  \Config\Services::curlrequest();
         $response = $client->setHeader('Content-Type', 'application/json')->request('GET', $apiURL);
         $jsonString = $response->getBody(); // Get the JSON string

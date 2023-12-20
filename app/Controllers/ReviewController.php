@@ -18,7 +18,7 @@ class ReviewController extends BaseController
             $model = model(Review::class);
             // $productInfo = 
             $result = $model->getReviewByProductId($drugsId);
-            $apiURL = 'http://localhost:8080/api/data/'.$drugsId;
+            $apiURL = getenv('SERVICE_URL').'/api/data/'.$drugsId;
             $client =  \Config\Services::curlrequest();
             $response = $client->setHeader('Content-Type', 'application/json')->request('GET', $apiURL);
             $jsonString = $response->getBody(); // Get the JSON string
